@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.icon {
+  transition: filter 0.3s ease; /* Transición suave */
+}
+
+.icon:hover {
+    filter: invert(1) brightness(1.2);
+}
+
+
+
+
+
+/* Estilo de la barra lateral cuando está completamente expandida */
+.sidebar {
+    width: 250px;
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    padding-block: 18vh;
+    text-align: center;
+    position: relative;
+    transition: width 0.3s ease;  /* Animación para retraerse/expandirse */
+}
+
+/* Estilo de la barra lateral cuando está retraída parcialmente */
+.sidebar.active {
+    width: 60px;  /* En lugar de retraer completamente, solo a 60px */
+    padding: 20px 10px;  /* Reducimos el padding */
+}
+
+/* Ocultar las imágenes cuando está retraída */
+.sidebar.active .profile-pic {
+    display: none;
+}
+
+/* Mantener visible el texto en formato más pequeño o ocultarlo */
+.sidebar.active nav ul li a {
+    font-size: 0;
+}
+
+/* Botón de hamburguesa: lo mantenemos en su lugar */
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: -30px;  /* Ajustamos para que esté siempre visible */
+    font-size: 30px;
+    background-color: #34495e;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    transition: right 0.3s ease;
+}
+.thumbnail {
+    width: 20%; /* Tamaño pequeño inicial */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position:fixed;
+    z-index: 1; /* Asegúrate de que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Permitir desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    padding-top: 10%;
+    width: 80%; /* Ancho del modal */
+    max-width: 700px; /* Máximo ancho */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.sidebar.active .toggle-btn {
+    right: -30px;  /* Mantener el botón visible al retraer */
+}
+
+/* Estilo para la sección de contenido */
+.content {
+    width: calc(100% - 250px); /* El contenido ocupa el resto de la pantalla */
+    padding: 30px;
+    transition: width 0.3s ease;
+}
+
+/* Cuando el menú está retraído, expandimos la sección de contenido */
+.sidebar.active ~ .content {
+    width: calc(100% - 60px);  /* Ajustamos para cuando el menú está retraído */
+}
+.skill-container {
+    margin-block: 2%;
+}
+.skill-bar {
+    width: 100%; /* La barra ocupará el 100% del contenedor */
+    background-color: #ddd; /* Fondo gris claro para la barra */
+    border-radius: 25px; /* Bordes redondeados */
+    overflow: hidden; /* Para asegurarnos de que el contenido no se salga del contenedor */
+}
+
+.skill-level {
+    height: 30px; /* Altura de la barra */
+    background-color: #3498db; /* Color de la barra llena */
+    width: 0%; /* El ancho se ajustará dinámicamente según el porcentaje */
+    line-height: 30px; /* Centrar el texto verticalmente */
+    color: white; /* Texto blanco */
+    text-align: center; /* Texto centrado */
+    border-radius: 25px; /* Bordes redondeados internos */
+    transition: width 1s ease-in-out; /* Animación suave al cargar */
+}
+
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 3px solid #2c3e50;
+}
+.profile-pic-about {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2c3e50;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Botón para abrir/cerrar el sidebar */
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    font-size: 30px;
+    background-color: #34495e;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 0 5px 5px 0;
+    transition: right 0.3s ease;
+}
+
+.sidebar.active .toggle-btn {
+    right: -40px;
+    opacity: 1;
+}
+
+/* Sección de contenido */
+.content {
+    width: calc(100%);
+    padding: 30px;
+    transition: width 0.3s ease;
+}
+
+
+.sidebar.active ~ .content {
+    width: 100%;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    padding-top: 8vh;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 10px;
+}
+table {
+    width: 100%; /* Ajusta a todo el ancho disponible */
+    table-layout: fixed; /* Mantiene la proporción de las celdas */
+    text-align: left;
+}
+th, td {
+    padding: 10px; /* Ajusta el espacio interno */
+    word-wrap: break-word; /* Si hay contenido muy largo */
+}
+
+
+
+p, ul {
+    color: #555;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Reduce el tamaño de la barra lateral */
+    }
+
+    .content {
+        width: calc(100%); /* Ajusta el contenido */
+    }
+
+    .container {
+        display: flex;
+        width: 200%;
+        max-width: 1200px;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  
+   
+}
+

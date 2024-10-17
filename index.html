@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>       
+</head>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="toggle-btn" id="toggle-btn" onclick="toggleSidebar()">&#9776;</div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showSection('about')">
+                        <img src="about.png" alt="Tu Foto" class="icon about" width="20%">
+                      </a></li>
+                      <li><a href="#" onclick="showSection('projects')">
+                        <img src="project.png" alt="Tu Foto" class="icon project" width="20%">
+                      </a></li>
+                      <li><a href="#" onclick="showSection('education')">
+                        <img src="education.png" alt="Tu Foto" class="icon education" width="25%">
+                      </a></li>
+                      <li><a href="#" onclick="showSection('skills')">
+                        <img src="skill.png" alt="Tu Foto" class="icon skill" width="30%">
+                        <li><a href="https://youtu.be/Qbz9wzzLUb4">
+                          <img src="youtube.png" alt="Tu Foto" class="icon skill" width="30%"></li>
+                      </a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <div id="about" class="section active">
+                
+                <h2>Acerca de mí</h2>
+                <table>
+                    <tr>
+                      <th><img src="foto.jpg" class="profile-pic-about"></th>
+                        <th><h3>Angel Gabriel Zazueta Galaz</h3>
+                        <p>Estudiante de Ingeniera en Sistemas de Información</p></th>
+                        <th><h3>Teléfono</h3>
+                <p>662 203 4794</p></th>
+               
+                    </tr>
+                    <tr>
+                        <th><h3>Email</h3>
+                <p>angel.zazueta14@hotmail.com</p></th>
+                        <th><h3>Dirección</h3>
+                <p>Hermosillo, Sonora</p></th>
+                <th><h3>Fecha de nacimiento</h3>
+                <p>13 de mayo del 2004</p></th>
+                    </tr>
+                    <tr>
+
+                <th><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/angel-gabriel-zazueta-galaz-b77b15309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " >
+                        <img src="linkedin.png" alt="Tu Foto"  width="15%">
+                      </a></th>
+                      <th><h3>Github</h3><a href="https://github.com/AngelZ1305 ">
+                            <img src="github.png" alt="Tu Foto"  width="20%"></th>
+                            
+                          
+                            <th><button id="downloadBtn">Descargar PDF</button></th>
+                        </th>
+                    </tr>
+                
+                    
+
+                </table>
+                
+            </div>
+
+            <div id="projects" class="section">
+                <h2>Proyectos y Certificaciones</h2>
+                <ul>
+                    <li><strong>Unison Hub:</strong> Sistema hecho con Java SpringBoot donde se simula un foro de preguntas y respuestas,
+                         usando MySQL como base de datos. Participé en el frontend en conjunto con un equipo.  En cuanto al diseño es una
+                          página totalmente responsiva y tiene como opción el modo obscuro y claro a preferencia individual.</li>
+                          <img src="unisonhub.png"  class="thumbnail" onclick="openModal(this)">
+
+                          <!-- Modal -->
+                          <div id="myModal" class="modal">
+                              <span class="close" onclick="closeModal()">&times;</span>
+                              <img class="modal-content" id="img01">
+                              <div id="caption"></div>
+                          </div>
+                    <li><strong>Break Out:</strong> Proyecto para Desarrollo de Sistemas 3, en donde se hace uso de los hilos de Java para 
+                        simular el juego de BreakOut. Participé en algunas funciones especificas y testeo del programa.</li>
+                        <img src="breakout.png"  class="thumbnail" onclick="openModal(this)">
+
+                    <li><strong>PokeAPI:</strong> Proyecto final para Desarrollo de Sistemas 3, en donde se hace uso de Java para 
+                        conectarse a una API, aunado al uso de hilos, se le da la opción al usuario de buscar un Pokemon mediante 
+                        distintas formas (Nombre, tipo, generación), para después poder seleccionar movimientos y habilidades, de manera
+                         que se genere una carta según las opciones seleccionadas.</li>
+                         <img src="pokeapi.png"  class="thumbnail" onclick="openModal(this)">
+
+                         <li><strong>Sistema Escolar:</strong> Proyecto trabajado durante Desarrollo de Sistemas 4. Utilizando como lenguaje
+                        PHP y base de datos MYSQL, este sistema era algo sencillo el cual posee roles como estudiante, administrador o 
+                        docente. </li>
+                        <img src="sistemaescolar.png"  class="thumbnail" onclick="openModal(this)">
+                        <li><strong>FrontEnd:</strong>  </li>
+                            <img src="frontend.png"  class="thumbnail" onclick="openModal(this)">
+    
+
+                </ul>
+            </div>
+
+            <div id="education" class="section">
+                <h2>Educación</h2>
+                <h3><strong>Ingeniería en Sistemas de Información (2022 - 2026)</strong></h3>
+                <h3><strong>Universidad de Sonora</strong></h3><p> La Universidad de Sonora es una Institución de Educación Superior autónoma y de
+                     servicio público fundada en 1942. Es el más valioso patrimonio social del estado de Sonora por la magnitud y calidad
+                      de sus recursos humanos y materiales, el número de estudiantes, la calidad de la educación que ofrece, la presencia 
+                      de sus egresados y por su impacto en la historia y el progreso regional.</p>
+                      <img src="unison.png" alt="Tu Foto"  width="70%">                
+            </div>
+
+            <div id="skills" class="section">
+                <h2>Habilidades</h2>
+                <ul>
+                    <h3>Perfil</h3>
+                    <p>Apasionado por la tecnología y la innovación, con un enfoque en el desarrollo de soluciones eficientes para problemas complejos. 
+                        Me mantengo actualizado en las últimas tendencias tecnológicas y su aplicación en áreas como desarrollo web, bases de datos, 
+                        y automatización. Busco oportunidades para aplicar mis conocimientos en proyectos prácticos y ampliar mis habilidades en un entorno
+                         profesional.
+                    </p>
+                    <h3>Habilidades Técnicas</h3>
+                    <p>A lo largo de mi carrera, me he especializado en el desarrollo frontend, adquiriendo un sólido dominio de HTML, CSS y JavaScript 
+                        para crear interfaces web eficientes y atractivas. Sin embargo, también he complementado estos conocimientos con experiencia en 
+                        áreas backend, como Java, PHP, servidores, redes y bases de datos, lo que me permite tener una visión integral del desarrollo de 
+                        aplicaciones y sistemas. Esta combinación de habilidades me ha permitido desarrollar soluciones completas, abarcando tanto la parte
+                         visual como la funcionalidad técnica en diferentes entornos.</p>
+
+                    
+                    <div class="skill-container">
+                        <div class="skill-bar">
+                          <div class="skill-level" style="width: 80%;">Java</div> <!-- Cambia el porcentaje aquí -->
+                        </div>
+                      </div>
+                      <div class="skill-container">
+                        <div class="skill-bar">
+                          <div class="skill-level" style="width: 75%;">PHP</div> <!-- Cambia el porcentaje aquí -->
+                        </div>
+                      </div>
+                      <div class="skill-container">
+                        <div class="skill-bar">
+                          <div class="skill-level" style="width: 70%;">MySQL</div> <!-- Cambia el porcentaje aquí -->
+                        </div>
+                      </div>
+
+                    <div class="skill-container">
+                        <div class="skill-bar">
+                          <div class="skill-level" style="width: 90%;">HTML</div> <!-- Cambia el porcentaje aquí -->
+                        </div>
+                      </div>
+                      
+                      <div class="skill-container">
+                        <div class="skill-bar">
+                          <div class="skill-level" style="width: 80%;">CSS</div> <!-- Cambia el porcentaje aquí -->
+                        </div>
+                      </div>
+                      
+                      <div class="skill-container">
+                        <div class="skill-bar">
+                          <div class="skill-level" style="width: 70%;">JavaScript</div> <!-- Cambia el porcentaje aquí -->
+                        </div>
+                      </div>
+                      <h3>Habilidades Blandas</h3>
+                      <p>A lo largo de mi formación, he desarrollado importantes habilidades blandas que han sido clave en mi crecimiento personal y 
+                        profesional. He demostrado iniciativa y responsabilidad en cada proyecto, buscando siempre mejorar y asumir nuevos desafíos. 
+                        Mi capacidad de comunicación me ha permitido trabajar eficazmente en equipo, mientras que mi naturaleza autodidacta y 
+                        perseverancia me han llevado a adquirir nuevos conocimientos de manera autónoma, manteniéndome en constante aprendizaje y 
+                        adaptación.</p>
+                      <h3>Idiomas</h3>
+                      <div class="skill-container">
+                        <div class="skill-bar">
+                          <div class="skill-level" style="width: 100%;">Español</div> <!-- Cambia el porcentaje aquí -->
+                        </div>
+                      </div>
+                      <div class="skill-container">
+                        <div class="skill-bar">
+                          <div class="skill-level" style="width: 80%;">Inglés</div> <!-- Cambia el porcentaje aquí -->
+                        </div>
+                      </div>
+                    </div>
+                     
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Función para generar PDF
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+    // Guarda el estado actual de las secciones
+    var sections = document.querySelectorAll('.section');
+    var activeSections = [];
+
+    // Muestra todas las secciones
+    sections.forEach(function(section) {
+        if (!section.classList.contains('active')) {
+            section.classList.add('active');
+            activeSections.push(section);
+        }
+    });
+
+    html2canvas(document.querySelector('.content'), { scale: 2 }).then(function(canvas) {
+        const imgData = canvas.toDataURL('image/png');
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const imgWidth = 210; // Ancho del PDF en mm
+        const pageHeight = pdf.internal.pageSize.height;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        let heightLeft = imgHeight;
+
+        let position = 0;
+
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+        }
+
+        pdf.save('curriculum_vitae.pdf');
+        
+
+        // Restaura el estado original de las secciones
+        activeSections.forEach(function(section) {
+            section.classList.remove('active');
+        });
+        
+    });
+});
+
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function openModal(img) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            const captionText = document.getElementById("caption");
+            modal.style.display = "block"; 
+            modalImg.src = img.src; 
+            captionText.innerHTML = img.alt; 
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none"; 
+        }
+    </script>
+    
+   
+    
+</body>
+</html>
