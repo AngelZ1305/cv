@@ -20,11 +20,50 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .icon {
-  transition: filter 0.3s ease; /* Transición suave */
+    transition: filter 0.3s ease; /* Transición suave */
+    filter: brightness(0); /* Hace que el icono sea negro */
+  }
+  
+  .icon:hover {
+    filter: invert(1);
+}
+.skill-icon {
+    transition: filter 0.3s ease; /* Transición suave */
+    filter: brightness(0); /* Hace que el icono sea negro */
+  }
+.skill-icon:hover {
+    filter: invert(1) sepia(100%) saturate(5000%) hue-rotate(75deg) brightness(120%);
 }
 
-.icon:hover {
-    filter: invert(1) brightness(1.2);
+.projects-icon {
+    transition: filter 0.3s ease; /* Transición suave */
+    filter: brightness(0); /* Hace que el icono sea negro */
+  }
+  
+  .projects-icon:hover {
+    filter: invert(1) sepia(200%) saturate(10000%) hue-rotate(10deg) brightness(120%) contrast(150%);
+}
+
+
+
+  .education-icon {
+    transition: filter 0.3s ease; /* Transición suave */
+    filter: brightness(0); /* Hace que el icono sea negro */
+}
+
+.education-icon:hover {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(100%) saturate(400%) hue-rotate(45deg) brightness(105%) contrast(100%);
+}
+
+
+  .youtube-icon {
+    transition: filter 0.3s ease; /* Transición suave */
+    filter: brightness(0); /* Hace que el icono sea negro */
+}
+
+.youtube-icon:hover {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(100%) saturate(7093%) hue-rotate(-15deg) brightness(93%) contrast(118%);
+    /* Cambia el icono a rojo */
 }
 
 
